@@ -78,8 +78,7 @@ E → to encrypt files
 D → to decrypt files
 
 ### 💻 GUI in Action
- | ![](Screenshort/Screenshot_2025-06-26_10_27_14.png) | ![](Screenshort/Screenshot_2025-06-26_10_27_33.png) |  ![](Screenshort/Screenshot_2025-06-26_11_47_29.png) |
- | ![](Screenshort/Screenshot_2025-06-26_11_11_08.png) | ![](Screenshort/Screenshot_2025-06-26_11_43_09.png) |
+ | ![](Screenshort/Screenshot_2025-06-27_10_17_02.png) | ![](Screenshort/Screenshot_2025-06-27_10_20_40.png) | 
 
 
 
