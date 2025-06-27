@@ -82,4 +82,4 @@ D → to decrypt files
 
 
 
- ✅ Built by **Kalpesh Dhamanse** —  [GitHub](https://github.com/Kalpeshdhamanse/SQL-Injection.git)
+ ✅ Built by **Kalpesh Dhamanse** —  [GitHub](https://github.com/Kalpeshdhamanse/Ransomware-Simulator.git)
